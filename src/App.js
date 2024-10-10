@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import StudentMark from './StudentMark'
+import StudentsTable from './StudentsTable';
 
+// Component Application
 function App() {
+  const students = ['Oleg',"Serhii","Maxim","Valeriya","Liza"];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="main">
+
+      <StudentsTable students={students}/>
+      {students.map(student=><StudentMark name={student} group="Fit 2-14"/>)}
     </div>
   );
 }
